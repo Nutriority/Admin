@@ -112,7 +112,6 @@ function toggleSidebar(force) {
          o.classList.remove('show'); 
          document.body.classList.remove('sidebar-open');
      }
- }
 }
 window.toggleSidebar = toggleSidebar;
 
