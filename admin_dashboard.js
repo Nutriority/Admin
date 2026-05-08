@@ -20,9 +20,9 @@ const resetIdleTimer = () => {
         console.warn("Session expired due to inactivity.");
         try {
             await signOut(auth);
-            window.location.href = 'admin_login.html?error=timeout';
+            window.location.href = 'index.html?error=timeout';
         } catch (err) {
-            window.location.href = 'admin_login.html';
+            window.location.href = 'index.html';
         }
     }, 20 * 60 * 1000);
 };
@@ -37,7 +37,7 @@ function startIdleMonitoring() {
 // Security Guard: Monitor Auth State
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
-        window.location.href = 'admin_login.html';
+        window.location.href = 'index.html';
         return;
     }
 
@@ -47,7 +47,7 @@ onAuthStateChanged(auth, async (user) => {
         if (!adminDoc.exists()) {
             console.warn("Unauthorized access attempt detected.");
             await signOut(auth);
-            window.location.href = 'admin_login.html?error=unauthorized';
+            window.location.href = 'index.html?error=unauthorized';
             return;
         }
         
@@ -63,7 +63,7 @@ onAuthStateChanged(auth, async (user) => {
         initDashboard();
     } catch (error) {
         console.error("Security verification failed:", error);
-        window.location.href = 'admin_login.html';
+        window.location.href = 'index.html';
     }
 });
 
@@ -72,7 +72,7 @@ window.logoutAdmin = async () => {
     if (confirm("Are you sure you want to sign out?")) {
         try {
             await signOut(auth);
-            window.location.href = 'admin_login.html';
+            window.location.href = 'index.html';
         } catch (error) {
             console.error("Logout error:", error);
             alert("Logout failed. Please try again.");
