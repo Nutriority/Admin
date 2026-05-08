@@ -19,7 +19,7 @@ This repository contains the Nutriority admin console for managing users, workou
 
 ## Main Files
 
-- `admin_login.html` - login page for admin users
+- `index.html` - login page for admin users
 - `admin_dashboard.html` - main admin dashboard and navigation
 - `admin_dashboard.js` - dashboard logic, authentication guard, stats, and chart rendering
 - `admin_login.js` - login flow, admin verification, and error handling
@@ -35,7 +35,7 @@ This repository contains the Nutriority admin console for managing users, workou
 1. Open the project in a local web server environment.
    - Examples: Live Server extension, `python3 -m http.server`, or any static file server.
 2. Ensure the Firebase project settings in `firebase_init.js` are correct for your environment.
-3. Access `admin_login.html` in your browser.
+3. Access `index.html` in your browser.
 4. Sign in with a Firebase-authenticated admin account whose UID exists in the `admins` Firestore collection.
 
 ## Notes
